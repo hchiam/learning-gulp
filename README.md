@@ -4,7 +4,7 @@ Just one of the things I'm learning. <https://github.com/hchiam/learning>
 
 <https://gulpjs.com/docs/en/getting-started/quick-start>
 
-## Startup CLI commands:
+## Startup CLI commands
 
 Once for your computer:
 
@@ -20,7 +20,7 @@ npm install gulp -D
 npx -p touch nodetouch gulpfile.js
 ```
 
-## Test `gulpfile.js`:
+## Test `gulpfile.js`
 
 Fill `gulpfile.js` and then run:
 
