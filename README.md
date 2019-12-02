@@ -19,3 +19,13 @@ mkdir my-project-folder-name
 npm install gulp -D
 npx -p touch nodetouch gulpfile.js
 ```
+
+## Test `gulpfile.js`:
+
+Fill `gulpfile.js` and then run:
+
+```bash
+gulp
+```
+
+BTW: You can run multiple tasks like this: `gulp <task> <other-task>`
