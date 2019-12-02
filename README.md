@@ -18,5 +18,4 @@ Per project:
 mkdir my-project-folder-name
 npm install gulp -D
 npx -p touch nodetouch gulpfile.js
-gulp --help
 ```
