@@ -2,6 +2,8 @@
 
 Just one of the things I'm learning. <https://github.com/hchiam/learning>
 
+`gulp` -> `gulpfile.js` -> Run tasks like [transpilation](https://gulpjs.com/docs/en/getting-started/javascript-and-gulpfiles). Write in JavaScript.
+
 <https://gulpjs.com/docs/en/getting-started/quick-start>
 
 ## Startup CLI commands
