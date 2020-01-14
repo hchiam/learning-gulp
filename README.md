@@ -13,9 +13,7 @@ git clone https://github.com/hchiam/learning-gulp.git
 npm install
 ```
 
-and then:
-
-`gulp` or specific gulp tasks like `gulp css` specified in gulpfile.js
+and then `gulp` or specific gulp tasks like `gulp css` or `gulp js` specified in gulpfile.js
 
 ## Startup CLI commands for a project from scratch
 
