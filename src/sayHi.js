@@ -1,0 +1,3 @@
+const sayHi = () => {
+  alert('hi');
+};

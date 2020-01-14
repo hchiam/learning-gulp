@@ -6,7 +6,18 @@ Just one of the things I'm learning. <https://github.com/hchiam/learning>
 
 <https://gulpjs.com/docs/en/getting-started/quick-start>
 
-## Startup CLI commands
+## Startup using this repo
+
+```bash
+git clone https://github.com/hchiam/learning-gulp.git
+npm install
+```
+
+and then:
+
+`gulp` or specific gulp tasks like `gulp css` specified in gulpfile.js
+
+## Startup CLI commands for a project from scratch
 
 Once for your computer:
 
@@ -31,3 +42,42 @@ gulp
 ```
 
 BTW: You can run multiple tasks like this: `gulp <task> <other-task>`
+
+## More notes
+
+```js
+const { watch, series, parallel } = require('gulp');
+
+function clean(cb) { cb(); }
+function cssTranspile(cb) { cb(); }
+function cssMinify(cb) { cb(); }
+function jsTranspile(cb) { cb(); }
+function jsBundle(cb) { cb(); }
+function jsMinify(cb) { cb(); }
+function publish(cb) { cb(); }
+
+// watch = watch for file changes ; series = in order ; parallel = maximize concurrency
+exports.build = function() {
+  watch('src/*.js',
+    series(
+      clean,
+      parallel(
+        cssTranspile,
+        series(jsTranspile, jsBundle)
+      ),
+      parallel(cssMinify, jsMinify),
+      publish
+    )
+  );
+}
+
+// function transpile(cb) { cb(); }
+// function minify(cb) { cb(); }
+// function livereload(cb) { cb(); }
+
+// if (process.env.NODE_ENV === 'production') {
+//   exports.build = series(transpile, minify);
+// } else {
+//   exports.build = series(transpile, livereload);
+// }
+```

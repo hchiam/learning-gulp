@@ -1,34 +1,29 @@
-const { watch, series, parallel } = require('gulp');
+var gulp = require('gulp')
+var request = require('request')
+var source = require('vinyl-source-stream')
+var concat = require('gulp-concat')
 
-function clean(cb) { cb(); }
-function cssTranspile(cb) { cb(); }
-function cssMinify(cb) { cb(); }
-function jsTranspile(cb) { cb(); }
-function jsBundle(cb) { cb(); }
-function jsMinify(cb) { cb(); }
-function publish(cb) { cb(); }
-
-// watch = watch for file changes ; series = in order ; parallel = maximize concurrency
-exports.build = function() {
-  watch('src/*.js',
-    series(
-      clean,
-      parallel(
-        cssTranspile,
-        series(jsTranspile, jsBundle)
-      ),
-      parallel(cssMinify, jsMinify),
-      publish
-    )
-  );
+function css() {
+  return request('https://cdn.jsdelivr.net/gh/kognise/water.css@latest/dist/dark.min.css')
+    .pipe(source('water.css'))
+    .pipe(gulp.dest('dist'))
 }
 
-// function transpile(cb) { cb(); }
-// function minify(cb) { cb(); }
-// function livereload(cb) { cb(); }
+function js() {
+  return gulp.src('src/*.js')
+    .pipe(concat('combined.js'))
+    // .pipe(minify())
+    .pipe(gulp.dest('dist'))
+}
 
-// if (process.env.NODE_ENV === 'production') {
-//   exports.build = series(transpile, minify);
-// } else {
-//   exports.build = series(transpile, livereload);
-// }
+gulp.task('css', css) // CLI command: gulp css
+gulp.task('js', js) // CLI command: gulp js
+
+function defaultTask() {
+  // place code for your default task here
+  // return css()
+  // return js()
+  return gulp.series(css, js)
+}
+
+exports.default = defaultTask() // CLI command: gulp

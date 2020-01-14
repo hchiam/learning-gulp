@@ -1,0 +1,3 @@
+const sayBye = () => {
+  alert('bye');
+};
