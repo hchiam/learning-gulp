@@ -8,6 +8,8 @@ Just one of the things I'm learning. <https://github.com/hchiam/learning>
 
 Gulp vs Grunt vs Webpack: <https://da-14.com/blog/gulp-vs-grunt-vs-webpack-comparison-build-tools-task-runners>
 
+Visual cheatsheet for gulp.js: <https://github.com/osscafe/gulp-cheatsheet>
+
 ## Startup using this repo
 
 ```bash
