@@ -83,3 +83,7 @@ exports.build = function() {
 //   exports.build = series(transpile, livereload);
 // }
 ```
+
+## Mini boilerplate repo for actual usage
+
+<https://github.com/hchiam/frontend-boilerplate>
